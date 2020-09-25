@@ -1,1 +1,16 @@
+D:\software\Git\testspace\qa-auto\testng\src\main\java\com\yizhan\testng\groups\GroupsOnMethod.java
+D:\software\Git\testspace\qa-auto\testng\src\main\java\com\yizhan\testng\DependTest.java
+D:\software\Git\testspace\qa-auto\testng\src\main\java\com\yizhan\testng\multiThread\MultiThreadOnAnnotion.java
+D:\software\Git\testspace\qa-auto\testng\src\main\java\com\yizhan\testng\paramter\DataProviderTest.java
+D:\software\Git\testspace\qa-auto\testng\src\main\java\com\yizhan\testng\groups\GroupOnClass1.java
+D:\software\Git\testspace\qa-auto\testng\src\main\java\com\yizhan\testng\suite\LoginTest.java
+D:\software\Git\testspace\qa-auto\testng\src\main\java\com\yizhan\testng\suite\PayTest.java
+D:\software\Git\testspace\qa-auto\testng\src\main\java\com\yizhan\testng\multiThread\MultiThreadOnXml.java
+D:\software\Git\testspace\qa-auto\testng\src\main\java\com\yizhan\testng\groups\GroupOnClass3.java
 D:\software\Git\testspace\qa-auto\testng\src\main\java\com\yizhan\testng\BasicAnnotation.java
+D:\software\Git\testspace\qa-auto\testng\src\main\java\com\yizhan\testng\suite\SuiteConfig.java
+D:\software\Git\testspace\qa-auto\testng\src\main\java\com\yizhan\testng\ExpectException.java
+D:\software\Git\testspace\qa-auto\testng\src\main\java\com\yizhan\testng\IgnoreTest.java
+D:\software\Git\testspace\qa-auto\testng\src\main\java\com\yizhan\testng\groups\GroupOnClass2.java
+D:\software\Git\testspace\qa-auto\testng\src\main\java\com\yizhan\testng\paramter\ParamterTest.java
+D:\software\Git\testspace\qa-auto\testng\src\main\java\com\yizhan\testng\TimeOutTest.java

@@ -1,0 +1,6 @@
+#moco-runner-0.11.0-standalone.jar和json文件放在同一路径下
+命令格式：java -jar ./moco-runner-0.11.0-standalone.jar 协议  -p 8888 -c json文件
+
+
+命令：java -jar ./moco-runner-0.11.0-standalone.jar http -p 8888 -c startup1.json
+

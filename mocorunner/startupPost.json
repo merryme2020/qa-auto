@@ -1,0 +1,34 @@
+[
+
+  {
+    "description": "模拟一个Post请求",
+    "request": {
+      "uri": "/postdemo",
+      "method": "post"
+    },
+    "response": {
+      "text": "这是我第一个mock的 post请求"
+
+    }
+
+  },
+  {
+    "description": "这是一个带参数的Post请求",
+    "request": {
+      "uri": "/postwithparam",
+      "method": "post",
+      "forms": {
+        "name": "merryme",
+        "sex": "man"
+
+
+      }
+    },
+    "response": {
+      "text": "merryme带着参数显示了！！！！"
+
+    }
+  }
+
+
+]
