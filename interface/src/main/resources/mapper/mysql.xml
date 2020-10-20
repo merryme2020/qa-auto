@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yizhan">
+    <!--登陆接口sql-->
+    <select id="login" parameterType="com.yizhan.model.User" resultType="Integer">
+        select count(*) from User
+        where userName=#{userName}
+        and passWord=#{passWord}
+
+    </select>
+
+    <!--添加用户接口sql-->
+    <insert id="addUser" parameterType="com.yizhan.model.User">
+
+        insert into
+        User(userName,passWord,age,sex,permission,isDelete)
+        values
+        (#{userName},#{passWord},#{age},#{sex},#{permission},#{isDelete});
+    </insert>
+
+    <!--获取用户sql-->
+    <!--知识点trim标签-->
+    <select id="getUserInfo" parameterType="com.yizhan.model.User" resultType="com.yizhan.model.User">
+        select * from User
+         <!--条件是where,预处理and-支持多个字段-->
+        <trim prefix="WHERE" prefixOverrides="and">
+            <!--不管你传进来User，里面哪个字段为空,我的sql语句都可以执行！-->
+            <!--if 代码里id不是null,并且id不是字符串的""-->
+            <if test="null !=id and '' != id">
+                AND id=#{id}
+            </if>
+
+            <if test="null != userName and ''!= userName">
+                AND userName=#{userName}
+            </if>
+
+            <if test="null != passWord and ''!= passWord">
+                AND passWord=#{passWord}
+            </if>
+
+            <if test="null != age and ''!= age">
+                AND age=#{age}
+            </if>
+
+            <if test="null != sex and ''!= sex">
+                AND sex=#{sex}
+            </if>
+
+            <if test="null != permission and ''!= permission">
+                AND permission=#{permission}
+            </if>
+
+            <if test="null != isDelete and ''!= isDelete">
+                AND isDelete=#{isDelete}
+            </if>
+        </trim>
+
+    </select>
+
+    <!--更新/删除用户信息-->
+    <update id="updateUserInfo" parameterType="com.yizhan.model.User">
+        update User
+        <!--条件是SET，suffixOverrides-尾部处理【,】-->
+        <trim prefix="SET" suffixOverrides=",">
+
+            <if test="null != userName and '' !=userName">
+                userName=#{userName},
+            </if>
+
+            <if test="null != passWord and '' !=passWord">
+                passWord=#{passWord},
+            </if>
+
+            <if test="null != age and '' !=age">
+                age=#{age},
+            </if>
+
+            <if test="null != sex and '' !=sex">
+                sex=#{sex},
+            </if>
+
+            <if test="null != permission and '' !=permission">
+                permission=#{permission},
+            </if>
+            <if test="null != isDelete and '' !=isDelete">
+                isDelete=#{isDelete},
+            </if>
+        </trim>
+
+        where id = #{id}
+
+    </update>
+
+
+</mapper>

@@ -1,0 +1,21 @@
+#配置端口号
+server:
+  port: 8888
+#配置日志
+logging:
+  path: logs
+  file: mylog.log
+#配置数据库
+spring:
+  application:
+    name: myTest
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/autotest
+    username: root
+    password: 123456
+
+mybatis:
+  type-aliases-package: com.yizhan.model  #用mybatis就要写model--》Javabean，Javabean要对应的一些包(这个是做映射的)
+  mapper-locations:   #这个mapper一会是写sql的
+    - mapper/* #在rescouses下创建一个mapper文件夹，mapper文件夹下面有个xml文件--》mysql.xml  这个xml文件就是映射到 mappers/*

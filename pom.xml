@@ -21,7 +21,10 @@
         <module>testng</module>
         <module>report</module>
         <module>httpclient</module>
-        <module>springbootdemo</module>
+        <module>springboot</module>
+        <module>mybatis</module>
+        <module>testcase</module>
+        <module>interface</module>
     </modules>
 
 

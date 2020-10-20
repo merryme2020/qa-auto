@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.yizhan.model">
+
+    <!-- 获取用户接口case-->
+    <select id="loginCase"  parameterType="Integer" resultType = "com.yizhan.model.LonginCase">
+     select * from loginCase where  id = #{id}
+    </select>
+
+     <!-- 添加用户接口case-->
+    <select id="addUserCase"  parameterType="Integer" resultType="com.yizhan.model.AddUserCase">
+    select  *  from addUserCase where id = #{id}
+    </select>
+
+    <!-- 获取用户信息case-->
+    <select id="getUserInfoCase"  parameterType="Integer" resultType="com.yizhan.model.GetUserInfoCase">
+    select  *  from getUserInfoCase  where id = #{id}
+
+    </select>
+
+
+    <!-- 获取用户列表case-->
+    <select id="getUserListCase"  parameterType="Integer" resultType="com.yizhan.model.GetUserListCase">
+    select  *  from getUserListCase  where id = #{id}
+
+    </select>
+
+
+    <!-- 更新/删除用户case-->
+    <select id="updateUserInfoCase"  parameterType="Integer" resultType="com.yizhan.model.UpdateUserInfoCase">
+    select  *  from updateUserInfoCase  where id = #{id}
+
+    </select>
+
+
+
+
+
+    <!--获取用户信息-->
+    <select id="getUserInfo" parameterType="com.yizhan.model.GetUserInfoCase" resultType="com.yizhan.model.User">
+        select  * from user where
+        id = #{userId};
+    </select>
+
+    <!--获取用户列表-->
+    <select id="getUserList" parameterType="com.yizhan.model.GetUserListCase" resultType="com.yizhan.model.User">
+        select  * from user
+        <trim prefix="WHERE" prefixOverrides="and">
+            <if test="null  !=userName and '' !=userName">
+                AND  userName=#{userName}    <!--#{userName} ,传入的userName-->
+            </if>
+            <if test="null  !=sex and '' !=sex">
+                AND  sex=#{sex}
+            </if>
+            <if test="null  !=age and '' !=age">
+                AND  age=#{age}   <!--更多的测试用例时这条sql也支持-->
+            </if>
+        </trim>
+        ;                    <!--  ; ，表示语句的结束-->
+    </select>
+
+
+    <!--添加用户信息-->
+    <select id="addUser" parameterType="com.yizhan.model.AddUserCase" resultType="com.yizhan.model.User">
+        select * from user where
+        userName = #{userName}
+        and passWord = #{passWord}
+        and sex = #{sex}
+        and permission = #{permission}
+        and isDelete = #{isDelete}
+
+    </select>
+
+
+
+        <!--获取更新之后的数据-->
+
+    <select id="getUpdateUserInfo" parameterType="com.yizhan.model.UpdateUserInfoCase" resultType="com.yizhan.model.User">
+        select * from user
+        <trim prefix="WHERE" prefixOverrides="and">
+            <if test="null !=id and '' != id">
+                id=#{userId}
+            </if>
+            <if test="null != userName and ''!= userName">
+                AND userName=#{userName}
+            </if>
+            <if test="null != age and ''!= age">
+                AND age=#{age}
+            </if>
+            <if test="null != sex and ''!= sex">
+                AND sex=#{sex}
+            </if>
+            <if test="null != permission and ''!= permission">
+                AND permission=#{permission}
+            </if>
+
+            <if test="null != isDelete and ''!= isDelete">
+                AND isDelete=#{isDelete}
+            </if>
+
+        </trim>
+
+    </select>
+
+</mapper>
+
+
+
+
+
